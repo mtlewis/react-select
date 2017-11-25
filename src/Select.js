@@ -105,7 +105,7 @@ class Select extends React.Component {
 
 	componentDidUpdate (prevProps, prevState) {
 		// focus to the selected option
-		if (this.menu && this.focused && this.state.isOpen && !this.hasScrolledToOption) {
+		if (this.menu && this.focused && this.state.isOpen && !this.hasScrolledToOption && this.props.scrollToFocusedOptionOnOpen) {
 			let focusedOptionNode = findDOMNode(this.focused);
 			let menuNode = findDOMNode(this.menu);
 			menuNode.scrollTop = focusedOptionNode.offsetTop;
@@ -1156,6 +1156,7 @@ Select.propTypes = {
 	resetValue: PropTypes.any,            // value to use when you clear the control
 	rtl: PropTypes.bool, 									// set to true in order to use react-select in right-to-left direction
 	scrollMenuIntoView: PropTypes.bool,   // boolean to enable the viewport to shift so that the full menu fully visible when engaged
+	scrollToFocusedOptionOnOpen: PropTypes.bool, // boolean to enable scrolling the focused item into view when opening the menu, defaults to true
 	searchable: PropTypes.bool,           // whether to enable searching feature or not
 	simpleValue: PropTypes.bool,          // pass the value to onChange as a simple value (legacy pre 1.0 mode), defaults to false
 	style: PropTypes.object,              // optional style to apply to the control
@@ -1207,6 +1208,7 @@ Select.defaultProps = {
 	required: false,
 	rtl: false,
 	scrollMenuIntoView: true,
+	scrollToFocusedOptionOnOpen: true,
 	searchable: true,
 	simpleValue: false,
 	tabSelectsValue: true,
