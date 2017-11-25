@@ -1,5 +1,5 @@
 exports.AU = [
-	{ value: 'australian-capital-territory', label: 'Australian Capital Territory', className: 'State-ACT' },
+	{ value: 'australian-capital-territory', label: 'Australian Capital Territory', className: 'State-ACT', disabled: true },
 	{ value: 'new-south-wales', label: 'New South Wales', className: 'State-NSW' },
 	{ value: 'victoria', label: 'Victoria', className: 'State-Vic' },
 	{ value: 'queensland', label: 'Queensland', className: 'State-Qld' },
